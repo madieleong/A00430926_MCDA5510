@@ -5,4 +5,3 @@ I am Madeleine (**Madie**) Leong and I am from Kota Kinabalu, also known as "Lan
 # About the Class
 
 Frankly speaking, I am not from a computer science background and have no software development knowledge at all so I heard a lot of new terms during this class. Also, I am not familiar with any languages mentioned in the class except Java. However, I really wish that I could learn and adept at this subject. I also hope that I would able to learn and use the project management methodologies mentioned in this class. 
-
