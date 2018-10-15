@@ -1,0 +1,14 @@
+Oct 14, 2018 10:51:03 PM SQLAccess createTrxns
+INFO: A new user was successfully inserted!
+Oct 14, 2018 10:51:07 PM SQLAccess getSingleTrxn
+INFO: [ID: 12345, NameOnCard: Madeleine Leong, CardNumber: 4141555566667777, CardType: Visa, ExpDate: 12/2030, UnitPrice: 13.0, Quantity: 4, TotalPrice: 52.0, CreatedOn: 2018-10-14 22:51:03, CreatedBy: User]
+Oct 14, 2018 10:51:28 PM SQLAccess updateTrxns
+INFO: An existing user was updated successfully!
+Oct 14, 2018 10:51:32 PM SQLAccess getSingleTrxn
+INFO: [ID: 12345, NameOnCard: Madeleine Leong, CardNumber: 5151666644443333, CardType: MasterCard, ExpDate: 12/2020, UnitPrice: 13.0, Quantity: 4, TotalPrice: 52.0, CreatedOn: 2018-10-14 22:51:28, CreatedBy: User]
+Oct 14, 2018 10:51:42 PM UserChoice createOrUpdateTrxn
+WARNING: ID exists!
+Oct 14, 2018 10:51:58 PM SQLAccess removeTrxns
+INFO: A user was deleted successfully!
+Oct 14, 2018 10:52:41 PM SQLAccess createTrxns
+INFO: A new user was successfully inserted!
