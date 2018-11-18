@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.mcda5510.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.mcda5510.com" xmlns:intf="http://service.mcda5510.com" xmlns:tns1="http://entity.mcda5510.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.mcda5510.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://entity.mcda5510.com"/>
+   <element name="test">
+    <complexType/>
+   </element>
+   <element name="testResponse">
+    <complexType/>
+   </element>
+   <element name="createTrxns">
+    <complexType>
+     <sequence>
+      <element name="trxn" type="tns1:Transaction"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createTrxnsResponse">
+    <complexType/>
+   </element>
+   <element name="updateTrxns">
+    <complexType>
+     <sequence>
+      <element name="trxn" type="tns1:Transaction"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateTrxnsResponse">
+    <complexType/>
+   </element>
+   <element name="initConnection">
+    <complexType/>
+   </element>
+   <element name="initConnectionResponse">
+    <complexType/>
+   </element>
+   <element name="getSingleTrxn">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getSingleTrxnResponse">
+    <complexType/>
+   </element>
+   <element name="removeTrxns">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeTrxnsResponse">
+    <complexType/>
+   </element>
+   <element name="resetTrxn">
+    <complexType>
+     <sequence>
+      <element name="trxn" type="tns1:Transaction"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="resetTrxnResponse">
+    <complexType>
+     <sequence>
+      <element name="resetTrxnReturn" type="tns1:Transaction"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://entity.mcda5510.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="Transaction">
+    <sequence>
+     <element name="cardNumber" nillable="true" type="xsd:string"/>
+     <element name="cardType" nillable="true" type="xsd:string"/>
+     <element name="createdBy" nillable="true" type="xsd:string"/>
+     <element name="createdOn" nillable="true" type="xsd:string"/>
+     <element name="expDate" nillable="true" type="xsd:string"/>
+     <element name="id" nillable="true" type="xsd:string"/>
+     <element name="nameOnCard" nillable="true" type="xsd:string"/>
+     <element name="quantity" type="xsd:int"/>
+     <element name="totalPrice" type="xsd:double"/>
+     <element name="unitPrice" type="xsd:double"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="initConnectionRequest">
+
+      <wsdl:part element="impl:initConnection" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSingleTrxnResponse">
+
+      <wsdl:part element="impl:getSingleTrxnResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="resetTrxnResponse">
+
+      <wsdl:part element="impl:resetTrxnResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getSingleTrxnRequest">
+
+      <wsdl:part element="impl:getSingleTrxn" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateTrxnsRequest">
+
+      <wsdl:part element="impl:updateTrxns" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="testRequest">
+
+      <wsdl:part element="impl:test" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="initConnectionResponse">
+
+      <wsdl:part element="impl:initConnectionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeTrxnsResponse">
+
+      <wsdl:part element="impl:removeTrxnsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeTrxnsRequest">
+
+      <wsdl:part element="impl:removeTrxns" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="resetTrxnRequest">
+
+      <wsdl:part element="impl:resetTrxn" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateTrxnsResponse">
+
+      <wsdl:part element="impl:updateTrxnsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createTrxnsRequest">
+
+      <wsdl:part element="impl:createTrxns" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="testResponse">
+
+      <wsdl:part element="impl:testResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createTrxnsResponse">
+
+      <wsdl:part element="impl:createTrxnsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="TrxnWebService">
+
+      <wsdl:operation name="test">
+
+         <wsdl:input message="impl:testRequest" name="testRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:testResponse" name="testResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createTrxns">
+
+         <wsdl:input message="impl:createTrxnsRequest" name="createTrxnsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createTrxnsResponse" name="createTrxnsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateTrxns">
+
+         <wsdl:input message="impl:updateTrxnsRequest" name="updateTrxnsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateTrxnsResponse" name="updateTrxnsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="initConnection">
+
+         <wsdl:input message="impl:initConnectionRequest" name="initConnectionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:initConnectionResponse" name="initConnectionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSingleTrxn">
+
+         <wsdl:input message="impl:getSingleTrxnRequest" name="getSingleTrxnRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getSingleTrxnResponse" name="getSingleTrxnResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeTrxns">
+
+         <wsdl:input message="impl:removeTrxnsRequest" name="removeTrxnsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeTrxnsResponse" name="removeTrxnsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="resetTrxn">
+
+         <wsdl:input message="impl:resetTrxnRequest" name="resetTrxnRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:resetTrxnResponse" name="resetTrxnResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="TrxnWebServiceSoapBinding" type="impl:TrxnWebService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="test">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="testRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="testResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createTrxns">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createTrxnsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createTrxnsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateTrxns">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateTrxnsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateTrxnsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="initConnection">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="initConnectionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="initConnectionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getSingleTrxn">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getSingleTrxnRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getSingleTrxnResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeTrxns">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeTrxnsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeTrxnsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="resetTrxn">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="resetTrxnRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="resetTrxnResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="TrxnWebServiceService">
+
+      <wsdl:port binding="impl:TrxnWebServiceSoapBinding" name="TrxnWebService">
+
+         <wsdlsoap:address location="http://localhost:8080/Assignment3/services/TrxnWebService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

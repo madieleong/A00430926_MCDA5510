@@ -1,0 +1,53 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from TrxnWebServiceService WSDL service -->
+
+  <service name="TrxnWebService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.mcda5510.com"/>
+      <parameter name="wsdlServiceElement" value="TrxnWebServiceService"/>
+      <parameter name="schemaQualified" value="http://entity.mcda5510.com,http://service.mcda5510.com"/>
+      <parameter name="wsdlServicePort" value="TrxnWebService"/>
+      <parameter name="className" value="com.mcda5510.service.TrxnWebServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="TrxnWebService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="test" qname="operNS:test" xmlns:operNS="http://service.mcda5510.com" soapAction="" >
+      </operation>
+      <operation name="createTrxns" qname="operNS:createTrxns" xmlns:operNS="http://service.mcda5510.com" soapAction="" >
+        <parameter qname="pns:trxn" xmlns:pns="http://service.mcda5510.com" type="tns:Transaction" xmlns:tns="http://entity.mcda5510.com"/>
+      </operation>
+      <operation name="updateTrxns" qname="operNS:updateTrxns" xmlns:operNS="http://service.mcda5510.com" soapAction="" >
+        <parameter qname="pns:trxn" xmlns:pns="http://service.mcda5510.com" type="tns:Transaction" xmlns:tns="http://entity.mcda5510.com"/>
+      </operation>
+      <operation name="initConnection" qname="operNS:initConnection" xmlns:operNS="http://service.mcda5510.com" soapAction="" >
+      </operation>
+      <operation name="getSingleTrxn" qname="operNS:getSingleTrxn" xmlns:operNS="http://service.mcda5510.com" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://service.mcda5510.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="removeTrxns" qname="operNS:removeTrxns" xmlns:operNS="http://service.mcda5510.com" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://service.mcda5510.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="resetTrxn" qname="operNS:resetTrxn" xmlns:operNS="http://service.mcda5510.com" returnQName="retNS:resetTrxnReturn" xmlns:retNS="http://service.mcda5510.com" returnType="rtns:Transaction" xmlns:rtns="http://entity.mcda5510.com" soapAction="" >
+        <parameter qname="pns:trxn" xmlns:pns="http://service.mcda5510.com" type="tns:Transaction" xmlns:tns="http://entity.mcda5510.com"/>
+      </operation>
+      <parameter name="allowedMethods" value="updateTrxns resetTrxn test initConnection getSingleTrxn createTrxns removeTrxns"/>
+
+      <typeMapping
+        xmlns:ns="http://entity.mcda5510.com"
+        qname="ns:Transaction"
+        type="java:com.mcda5510.entity.Transaction"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
