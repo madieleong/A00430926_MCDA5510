@@ -426,7 +426,7 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       <wsdl:port binding="impl:TrxnWebServiceSoapBinding" name="TrxnWebService">
 
-         <wsdlsoap:address location="http://localhost:8080/Assignment3/services/TrxnWebService"/>
+         <wsdlsoap:address location="http://localhost:8049/Assignment3/services/TrxnWebService"/>
 
       </wsdl:port>
 
